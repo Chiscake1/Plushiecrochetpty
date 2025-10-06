@@ -4,26 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Plushie Crochet</title>
+
+    <style>
+      @media (max-width: 768px) {
+        #menuButton {
+          display: block !important;
+        }
+
+        #navLinks {
+          width: 100%;
+          display: none;
+          padding-top: 10px;
+        }
+
+        #navLinks.show {
+          display: block;
+        }
+
+        #menu {
+          flex-direction: column !important;
+          gap: 10px;
+        }
+
+        #menu a {
+          font-size: 20px;
+          padding: 10px 0;
+        }
+      }
+    </style>
+
 </head>
 
 <body>
-    <header style="display: flex; align-items: center; padding: 15px 20px; background-color: #fffafc;">
+    <header style="display: flex; align-items: center; padding: 15px 20px; background-color: #fffafc; flex-wrap: wrap;">
       <img src="img/logo 1.png" alt="nuestro logo" style="width: 150px; margin-right: 20px;">
-      <div class="textos">
+      
+      <div class="textos" style="flex: 1;">
         <h1 style="margin: 0; font-size: 28px; color: #A0522D; display: inline-block;">Plushie Crochet</h1>
         <h1 style="margin: 0; font-size: 14px; color: #A0522D; display: inline-block; vertical-align: middle;">PTY</h1>
         <p style="margin: 0; font-size: 22px; color: #A0522D;">Tejidos personalizados | Encuentra el regalo ideal</p>
       </div>
-      <div style="margin-left: auto; padding: 15px 20px; font-family: 'Poppins', sans-serif; font-size: 25px;">
-        <nav>
-          <a href="index.html" style="color: #A0522D; margin-right: 25px; text-decoration: none;">Inicio</a>
-          <a href="Entemporada.html" style="color: #A0522D; margin-right: 25px; text-decoration: none;">En temporada</a>
-          <a href="productos.html" style="color: #A0522D; margin-right: 25px; text-decoration: none;">Productos</a>
-          <a href="historia.html" style="color: #A0522D; margin-right: 25px; text-decoration: none;">Historia</a>
+
+      <!-- Botón hamburguesa -->
+      <button onclick="toggleMenu()" style="display: none; font-size: 28px; background: none; border: none; cursor: pointer; color: #A0522D;" id="menuButton">
+        ☰
+      </button>
+
+      <!-- Menú -->
+      <div id="navLinks" style="margin-left: auto; padding: 15px 20px; font-family: 'Poppins', sans-serif; font-size: 25px;">
+        <nav id="menu" style="display: flex; flex-direction: row; gap: 25px;">
+          <a href="index.html" style="color: #A0522D; text-decoration: none;">Inicio</a>
+          <a href="Entemporada.html" style="color: #A0522D; text-decoration: none;">En temporada</a>
+          <a href="productos.html" style="color: #A0522D; text-decoration: none;">Productos</a>
+          <a href="historia.html" style="color: #A0522D; text-decoration: none;">Historia</a>
           <a href="contacto.html" style="color: #A0522D; text-decoration: none;">Contacto</a>
         </nav>
       </div>
     </header>
+
+    <script>
+      function toggleMenu() {
+        var nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+      }
+    </script>
+
 
     <div style="position: relative; width: 100%; height: 500px; font-family: 'Poppins', sans-serif; overflow: hidden;">
 
